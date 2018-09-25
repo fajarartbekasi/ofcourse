@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('signup.store') }}">
                         @csrf
 
                         <div class="form-group row">
@@ -34,6 +34,32 @@
                                 @if ($errors->has('email'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="born" class="col-md-4 col-form-label text-md-right">{{ __('Born Place') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="born" type="text" class="form-control{{ $errors->has('born') ? ' is-invalid' : '' }}" name="born_place" value="{{ old('born_place') }}" required>
+
+                                @if ($errors->has('born'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('born') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="date" class="col-md-4 col-form-label text-md-right">{{ __('Born Date') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="date" type="date" class="form-control{{ $errors->has('date') ? ' is-invalid' : '' }}" name="born_date" value="{{ old('born_date') }}" required>
+
+                                @if ($errors->has('date'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('date') }}</strong>
                                     </span>
                                 @endif
                             </div>

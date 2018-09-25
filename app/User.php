@@ -28,17 +28,8 @@ class User extends Authenticatable implements MustVerifyEmail
         'password', 'remember_token',
     ];
 
-    public function types()
-    {
-
-        return $this->hasOne(Type::class);
-
-    }
-    /**
-     * satu user bisa memiliki banyak travel
-     */
-    public function travels()
-    {
-        return $this->hasMany(Travel::class);
-    }
+   public function profiles()
+   {
+       return $this->hasOne(Profile::class);
+   }
 }
