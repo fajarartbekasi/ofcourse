@@ -1,0 +1,454 @@
+@import "variables";
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+
+.navbar-laravel {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+// form style
+.form-control, .form-control:focus, input{
+  border-width: 1px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  outline: 0;
+
+  &::placeholder {
+    color: #95a5a6;
+  }
+}
+
+.col-form-label {
+  text-align: right;
+}
+
+legend {
+  border: none;
+}
+
+.well {
+    border: none;
+    box-shadow: none;
+    min-height: 20px;
+    padding: 19px;
+    margin-bottom: 20px;
+    background-color: #ecf0f1;
+    border-radius: 4px;
+}
+
+// comment style
+.comment {
+  .heading {
+    padding: 10px 20px;
+    background: #ECF0F1;
+
+    a {
+      color: #7F8C8D;
+    }
+  }
+  .box-body {
+    border: 1px solid #ECF0F1;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #7F8C8D;
+  }
+  .media {
+    padding-top: 20px;
+  }
+  .media-left:hover img,
+  .media-right:hover img {
+    -webkit-transform: rotateZ(360deg);
+    -moz-transform: rotateZ(360deg);
+    transform: rotateZ(360deg);
+  }
+  .media-left img {
+    width: 64px;
+    height: 64px;
+    -webkit-transition: transition .6s ease-in;
+    -moz-transition: transition .6s ease-in;
+    transition: transform .6s ease-in;
+  }
+  .comment-editor {
+    margin-top: 40px;
+  }
+  .footing {
+    padding: 10px 20px;
+    border-top: 1px dashed #e1e1e1;
+  }
+  .downvoted {
+    background: #fff;
+    opacity: .3;
+  }
+  .downvoted:hover {
+    opacity: 1;
+  }
+
+  i {
+    margin-right: 5px;
+  }
+  .operate {
+    font-size: 17px;
+    a {
+      margin-right: 5px;
+      text-decoration: none;
+    }
+  }
+  .none {
+    color: #c5c5c5;
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .comment .media-left {
+    display: none;
+  }
+  .own-avatar {
+    display: none;
+  }
+}
+
+.comment-body {
+  padding: 30px 50px;
+  color: #34495e;
+  display: grid;
+
+  a {
+    color: #1abc9c;
+  }
+}
+
+// ibox style
+
+.ibox {
+  clear: both;
+  margin-bottom: 25px;
+  margin-top: 0;
+  padding: 0;
+  width: 100%;
+}
+.ibox-title {
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  background-color: #ffffff;
+  border-color: #e7eaec;
+  border-image: none;
+  border-style: solid solid none;
+  border-width: 2px 0 0;
+  color: inherit;
+  margin-bottom: 0;
+  padding: 15px 15px 7px;
+  min-height: 48px;
+}
+.ibox-default {
+  border-color: #e7eaec;
+}
+.ibox-success {
+  border-color: #3498db;
+}
+.ibox-success {
+  border-color: #1abc9c;
+}
+.ibox-warning {
+  border-color: #f1c40f;
+}
+.ibox-danger {
+  border-color: #e74c3c;
+}
+.ibox-content {
+  clear: both;
+  background-color: #ffffff;
+  color: inherit;
+  padding: 15px 20px 20px 20px;
+  border-color: #e7eaec;
+  border-image: none;
+  border-style: solid solid none;
+  border-width: 1px 0;
+}
+.no-padding {
+  padding: 0;
+}
+
+// navbar style
+@media (min-width: 768px) {
+  .navbar-nav > li > a {
+    padding-top: 17px;
+    padding-bottom: 14px;
+  }
+}
+
+.navbar-collapse {
+  border: none;
+}
+
+.navbar-nav .dropdown-toggle {
+  color: #fff;
+}
+
+.navbar-nav .notification i {
+  color: #fff;
+}
+
+.notification {
+  i {
+    position: relative;
+    font-size: 1.2rem;
+    vertical-align: bottom;
+
+    .new {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #d9534f;
+      display: none;
+    }
+  }
+}
+
+// Togle button
+.togglebutton {
+  vertical-align: middle;
+  &, label, input, .toggle {
+    user-select: none;
+  }
+  label {
+    cursor: pointer;
+    color: #28435f;
+
+    // Hide original checkbox
+    input[type=checkbox] {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .toggle {
+      text-align: left; // Issue #737 horizontal form
+    }
+    // Switch bg off and disabled
+    .toggle,
+    input[type=checkbox][disabled] + .toggle {
+      content: "";
+      display: inline-block;
+      width: 40px;
+      height: 18px;
+      background-color: rgba(80, 80, 80, 0.7);
+      border-radius: 15px;
+      margin-right: 15px;
+      transition: background 0.3s ease;
+      vertical-align: middle;
+    }
+    // Handle off
+    .toggle:after {
+      content: "";
+      display: inline-block;
+      width: 25px;
+      height: 25px;
+      background-color: #F1F1F1;
+      border-radius: 20px;
+      position: relative;
+      box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4);
+      left: -5px;
+      top: -4px;
+      transition: left 0.3s ease, background 0.3s ease, box-shadow 0.1s ease;
+    }
+    input[type=checkbox] {
+      // Handle disabled
+      &[disabled] {
+        & + .toggle:after,
+        &:checked + .toggle:after {
+          background-color: #BDBDBD;
+        }
+      }
+
+      & + .toggle:active:after,
+      &[disabled] + .toggle:active:after {
+        box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4), 0 0 0 15px rgba(0, 0, 0, 0.1);
+      }
+
+      // Ripple off and disabled
+      &:checked + .toggle:after {
+        left: 20px;
+      }
+    }
+
+    // set bg when checked
+    input[type=checkbox]:checked {
+      + .toggle {
+        background-color: #BDBDBD; // Switch bg on
+      }
+
+      + .toggle:after {
+        background-color:  #BDBDBD; // Handle on
+      }
+    }
+  }
+}
+
+// toster style
+.toast-success {
+  background-color: #1abc9c;
+}
+.toast-error {
+background-color: #e74c3c;
+}
+.toast-info {
+background-color: #fff;
+}
+.toast-warning {
+background-color: #f1c40f;
+}
+#toast-container > div {
+opacity: 0.9;
+-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
+filter: alpha(opacity=90);
+}
+
+.creative_feature_area{
+  background: #f7f7f7;
+}
+.c_feature_box{
+  box-shadow: 0px 25px 49px 0px rgba(58, 74, 88, 0.1);
+  border-radius: 2px;
+  background: #fff;
+  padding: 45px 0px;
+  margin-top: -100px;
+  z-index: 22;
+  position: relative;
+  .col-lg-4{
+      &:last-child{
+          .c_box_item{
+              &:before{
+                  display: none;
+              }
+          }
+      }
+  }
+}
+.c_box_item{
+  padding: 0px 35px 0px 40px;
+  position: relative;
+  &:before{
+      content: "";
+      background: #e5e5e5;
+      height: 145px;
+      width: 1px;
+      position: absolute;
+      right: -15px;
+      top: 0px;
+  }
+  
+}
+.c_feature_box {
+  -webkit-box-shadow: 0px 25px 49px 0px rgba(58, 74, 88, 0.1);
+  box-shadow: 0px 25px 49px 0px rgba(58, 74, 88, 0.1);
+  border-radius: 2px;
+  background: #fff;
+  padding: 45px 0px;
+  margin-top: -100px;
+  z-index: 22;
+  position: relative;
+}
+
+.c_feature_box .col-lg-4:last-child .c_box_item:before {
+  display: none;
+}
+
+.c_box_item {
+  padding: 0px 35px 0px 40px;
+  position: relative;
+}
+
+.c_box_item:before {
+  content: "";
+  background: #e5e5e5;
+  height: 145px;
+  width: 1px;
+  position: absolute;
+  right: -15px;
+  top: 0px;
+}
+
+.c_box_item h4 {
+  font-size: 20px;
+  color: #232d37;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  line-height: 36px;
+  padding-bottom: 10px;
+  -webkit-transition: all 400ms linear 0s;
+  -o-transition: all 400ms linear 0s;
+  transition: all 400ms linear 0s;
+}
+
+.c_box_item h4 i {
+  padding-right: 10px;
+  color: #2bc0a4;
+}
+
+.c_box_item h4:hover {
+  color: #2bc0a4;
+}
+
+.c_box_item p {
+  font-size: 14px;
+  line-height: 26px;
+  color: #51545f;
+  font-family: "Poppins", sans-serif;
+}
+
+.box-button{
+  display: inline-block;
+}
+
+.table-nav, .tombol-nav{
+  display: block;
+  clear: both;
+  float: left;
+  width: 100%;
+}
+
+.tombol-nav{
+  margin-top: 10px;
+  color: #7F8C8D;
+}
+
+.table-nav{
+  border-top: 1px;
+  border-bottom: 1px;
+}
+.jumlah-data, .paging{
+  width: 50%;
+  height: 50px;
+  display: block;
+}
+.jumlah-data{
+  float: left;
+  padding-top: 15px; 
+}
+.paging{
+  float: right;
+  text-align: right;
+  color: #7F8C8D;
+}
+.paging ul.pager, .paging ul.pagination{
+  text-align: right;
+  color: #7F8C8D;
+}
+ul.pagination, ul.pager{
+  margin-top: 8px;
+}
+td span.default {
+  color: #2e3436;
+ }
+ 
+@import "styles";
+@import "pagination";
